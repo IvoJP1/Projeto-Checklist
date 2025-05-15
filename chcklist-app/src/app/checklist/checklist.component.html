@@ -1,0 +1,43 @@
+<div class="fundo">
+  <h2>Minha checklist</h2>
+  <div class="cabecalho">
+    <input [(ngModel)]="novaTarefa" placeholder="Digite uma nova tarefa" />
+    <input type="date" [(ngModel)]="dataMaxima" />
+    <select [(ngModel)]="prioridade">
+      <option value="" disabled selected>Prioridade</option>
+      <option value="alta">Alta</option>
+      <option value="media">Média</option>
+      <option value="baixa">Baixa</option>
+    </select>
+    <button (click)="adicionarTarefa()">Adicionar</button>
+  </div>
+  <div class="conteudo">
+    <ul>
+      <li
+        *ngFor="let tarefa of tarefas"
+        [ngClass]="[
+          'tarefa',
+          tarefa.prioridade,
+          tarefa.concluida ? 'concluida' : ''
+        ]"
+      >
+        <input
+          type="checkbox"
+          [(ngModel)]="tarefa.concluida"
+          (change)="salvarTarefas()"
+        />
+
+        <span>
+          <span *ngIf="tarefa.concluida">✅</span>
+          {{ tarefa.nome }}
+          <small *ngIf="tarefa.data">
+            (Até {{ tarefa.data | date : "dd/MM/yyyy" }})
+          </small>
+        </span>
+        <button (click)="removerTarefa(tarefa)">Remover</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- [style.text-decoration]="tarefa.concluida ? 'line-through' : 'none'" -->
