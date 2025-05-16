@@ -29,7 +29,7 @@ h2 {
 }
 
 li {
-  width: 100%;
+  width: 90%;
   background-color: #f9f9f9;
   border-radius: 4px;
   align-items: center;
@@ -50,6 +50,8 @@ ul {
   margin-top: 20px;
   padding: 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 li button {
@@ -112,4 +114,44 @@ select {
   padding: 6px;
   border-radius: 4px;
   border: 1px solid #ccc;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-conteudo {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.forms button {
+  margin-top: 5px;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.cancelar {
+  background-color: #dc3545;
+}
+
+.cancelar:hover {
+  background-color: #a71d2a;
 }

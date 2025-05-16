@@ -18,6 +18,7 @@ export class ChecklistComponent implements OnInit {
     concluida: boolean;
     prioridade: string;
   }[] = [];
+  mostrarModal: boolean = false;
 
   ngOnInit(): void {
     if (typeof window !== 'undefined' && localStorage) {
@@ -61,5 +62,13 @@ export class ChecklistComponent implements OnInit {
     if (typeof window !== 'undefined' && localStorage) {
       localStorage.setItem('tarefas', JSON.stringify(this.tarefas));
     }
+  }
+
+  abrirModal() {
+    this.mostrarModal = true;
+  }
+
+  fecharModal() {
+    this.mostrarModal = false;
   }
 }
