@@ -51,6 +51,8 @@ ul {
   padding: 0;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
@@ -154,4 +156,13 @@ select {
 
 .cancelar:hover {
   background-color: #a71d2a;
+}
+
+.filtro-container {
+  margin-bottom: 1rem;
+}
+
+.filtro-container select {
+  padding: 0.25rem;
+  font-size: 1rem;
 }

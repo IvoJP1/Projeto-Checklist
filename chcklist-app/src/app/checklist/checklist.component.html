@@ -1,9 +1,18 @@
 <div class="fundo">
   <h2>Minha checklist</h2>
   <button (click)="abrirModal()">Adicionar uma nova tarefa</button>
+  <div class="filtro-container">
+    <label for="filtro">Ordenar por:</label>
+    <select id="filtro" [(ngModel)]="criterioOrdenacao">
+      <option value="criacao">Ordem de Criação</option>
+      <option value="data">Deta Máxima</option>
+      <option value="prioridade">Prioridade</option>
+    </select>
+  </div>
+  <h3>Tarefas Concluídas</h3>
   <ul>
     <li
-      *ngFor="let tarefa of tarefas"
+      *ngFor="let tarefa of tarefasOrdenadas"
       [ngClass]="[
         'tarefa',
         tarefa.prioridade,
